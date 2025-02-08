@@ -30,18 +30,31 @@
             messageIndex = (messageIndex + 1) % messages.length;
             const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
             yesButton.style.fontSize = `${currentSize * 1.5}px`;
+
+            document.getElementById("start").style.display='none';
+            document.getElementById("ohno").style.display='block';
         }
 
         function handleYesClick() {
             //window.location.href = "yes_page.html";
-            
-
             const mainContainer = document.querySelector('.main');
             mainContainer.style.display = 'none';
 
             const yesContainer = document.querySelector('.yes-container');
             yesContainer.style.display = 'block';
+            document.getElementById("ohno").style.display='none';
+
+            
+
         }
+        window.onload = function() {
+            
+        }
+        
+        //
+        //valentineAudio.currentTime = 0; // Reset audio to the beginning
+        // Play the audio
+        
     </script>
     <style>
         body {
@@ -107,18 +120,50 @@
                 <button class="no-button" onclick="handleNoClick()">No</button>
             </div>
             <div class="gif_container">
-                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif"
-                    alt="Cute GIF">
+                <!-- <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif"
+                    alt="Cute GIF"> -->
+
+                <img id="start" src="https://media.baamboozle.com/uploads/images/601568/1682513386_90288_gif-url.gif"/>
+                <!-- No -->    
+                <img id="ohno" style="display: none;" src="https://i.pinimg.com/originals/49/12/6d/49126dc5137c5cd898d544a6fb5ecca8.gif"/>    
             </div>
         </div>
-        
+
         <div class="yes-container" style="display: none;">
             <h1 class="header_text">Happy Valentine's Day❤️ <br>I LOVEE YOUU Harshii ma❤️</h1>
             <div class="gif_container">
                 <img
                     src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif">
+                
+                 <!-- <img src="https://i.pinimg.com/originals/c5/b8/48/c5b84896be3f2686c01d9eeb86d27658.gif" /> -->
             </div>
         </div>
+
+        <!-- Audio element (hidden) -->
+        <audio id="valentineAudio" style="display: none;">
+            <source src="up.mpeg" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <script>
+        //     document.addEventListener("DOMContentLoaded", function() {
+        //     const valentineAudio = document.getElementById('valentineAudio');
+        //     // Play the audio
+        //     if(valentineAudio)
+        //     valentineAudio.play(); 
+        // });
+        // window.addEventListener('load', function() {
+        //     const audio = document.getElementById('valentineAudio');
+        //     audio.play().catch((error) => {
+        //         console.warn("Autoplay was blocked by the browser.", error);
+        //     });
+        // });
+        document.body.addEventListener('click', () => {
+            const audio = document.getElementById('valentineAudio');
+            audio.play().catch((error) => {
+                console.warn("Autoplay was blocked by the browser.", error);
+            });
+        });
+        </script>
     </div>
 
 </body>
