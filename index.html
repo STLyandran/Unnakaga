@@ -26,11 +26,11 @@
         function handleNoClick() {
             const noButton = document.querySelector('.no-button');
             const yesButton = document.querySelector('.yes-button');
-            //noButton.textContent = messages[messageIndex];
-            if(!noButton.textContent.startsWith("Wrong option please try again"))
-            noButton.textContent = "Wrong option please try again.";
-            else
-            noButton.textContent += '.'
+            noButton.textContent = messages[messageIndex];
+            // if(!noButton.textContent.startsWith("Wrong option please try again"))
+            // noButton.textContent = "Wrong option please try again.";
+            // else
+            // noButton.textContent += '.'
             
             messageIndex = (messageIndex + 1) % messages.length;
             const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
